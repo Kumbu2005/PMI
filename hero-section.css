@@ -1,0 +1,158 @@
+body {
+    font-family: 'Lora', serif;
+    margin: 0;
+}
+p, h1 {
+    margin: 0;
+}
+
+/* === HERO LAYOUT === */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.hero-div {
+    background-image: url(main-hero-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    object-position: top;
+    background-clip: content-box;
+    background-attachment: scroll;
+    background-color: whitesmoke;
+    height: 70vh;
+    width: 100%;
+    position: relative;
+    
+}
+
+/* ✨ small tweak for tablet view */
+@media (max-width: 1000px) {
+    .hero-div {
+        height: 60vh; /* ✨ slightly smaller */
+        background-position: top center;
+        object-position: top;
+        background-clip: content-box;
+        background-attachment: scroll;
+    }
+}
+
+/* ✨ updated mobile view */
+@media (max-width: 800px) {
+    .hero-div {
+        height: 40vh; /* ✨ reduced height for smaller screens */
+        background-position: center;
+    }
+}
+
+/* === HERO CONTENT BOX === */
+.hero-middle {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 600px;
+    height: 400px; /* ✨ changed from fixed height */
+    padding: 20px; /* ✨ added padding for breathing space */   
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: 1;
+    margin-left: 40px; /* ✨ bit more balanced on large screens */
+    margin-top: -420px;
+    border-radius: 3px; /* ✨ added subtle rounding */
+    backdrop-filter: blur(4px); /* ✨ soft glass effect */
+}
+
+/* ✨ smoother mobile scaling */
+@media (max-width: 800px) {
+    .hero-middle {
+        width: 90%;
+        margin: 20px auto 0 auto; /* ✨ center box */
+        margin-top: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        align-items: center; /* ✨ center-align text on mobile */
+        text-align: center; /* ✨ better alignment for narrow width */
+        height: 300px;
+    }
+}
+
+/* === DIVIDER + TEXT === */
+.hero-divider {
+    border: none;
+    background-color: purple;
+    height: 100%;
+    width: 8px;
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.hero-divider-grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.hero-writing {
+    width: auto;
+}
+
+/* === HERO TEXT === */
+.hero-title {
+    font-size: 64px;
+    text-align: left;
+    width: 100%; /* ✨ changed from 70px */
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #2e003e; /* ✨ darker for readability */
+}
+
+.hero-text {
+    text-align: left;
+    font-size: 18px;
+    width: 500px;
+    line-height: 1.5; /* ✨ improved readability */
+}
+
+/* ✨ Responsive text scaling */
+@media (max-width: 800px) {
+    .hero-title {
+        font-size: 34px; /* ✨ slightly smaller */
+        text-align: center; /* ✨ align with layout */
+    }
+    .hero-text {
+        width: 90%;
+        font-size: 16px;
+        text-align: center;
+    }
+    .hero-divider {
+        display: none; /* ✨ hides divider on small screens */
+    }
+}
+
+/* === HERO BUTTON === */
+.hero-btn {
+    text-decoration: none;
+    color: white;
+    border: none; /* ✨ cleaner look */
+    border-radius: 4px; /* ✨ rounded edges */
+    padding: 12px 24px; /* ✨ slightly larger */
+    background-color: purple;
+    margin-top: 20px;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s; /* ✨ add interaction */
+    margin-left: 40px;
+}
+
+.hero-btn:hover {
+    background-color: #5a007a; /* ✨ hover shade */
+    transform: scale(1.05); /* ✨ gentle hover lift */
+}
+
+/* ✨ button scaling for small screens */
+@media (max-width: 600px) {
+    .hero-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
